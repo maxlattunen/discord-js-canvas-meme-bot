@@ -66,7 +66,7 @@ client.on('message', async message => {
         while ((ctx.measureText(opts.top).width > ctx.measureText(opts.bottom).width ? ctx.measureText(opts.top).width : ctx.measureText(opts.bottom).width) > Math.floor(canvas.width * 0.93)) {
             fontsize--;
             ctx.font = ctx.font = `bold ${fontsize}px Impact`;
-            if (fragmentText(ctx.measureText(opts.top).width > ctx.measureText(opts.bottom).width ? opts.top : opts.bottom, Math.floor(canvas.width * 0.93), ctx).length < 3 && (ctx.measureText(opts.top).actualBoundingBoxAscent * 2 + ctx.measureText(opts.top).actualBoundingBoxDescent * 2 < canvas.height * 0.4) && (ctx.measureText(opts.bottom).actualBoundingBoxAscent * 2 + ctx.measureText(opts.bottom).actualBoundingBoxDescent * 2 < canvas.height * 0.4)) {
+            if (fragmentText(ctx.measureText(opts.top).width > ctx.measureText(opts.bottom).width ? opts.top : opts.bottom, Math.floor(canvas.width * 0.93), ctx).length < 3 && (ctx.measureText(opts.top).actualBoundingBoxAscent * 2 + ctx.measureText(opts.top).actualBoundingBoxDescent * 2 < canvas.height * 0.3) && (ctx.measureText(opts.bottom).actualBoundingBoxAscent * 2 + ctx.measureText(opts.bottom).actualBoundingBoxDescent * 2 < canvas.height * 0.3)) {
                 if (ctx.measureText(opts.top).width > ctx.measureText(opts.bottom).width) opts.top = fragmentText(opts.top, Math.floor(canvas.width * 0.93), ctx).join('\n');
                 else opts.bottom = fragmentText(opts.bottom, Math.floor(canvas.width * 0.93), ctx).join('\n');
                 break;
